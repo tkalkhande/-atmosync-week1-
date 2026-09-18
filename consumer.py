@@ -28,14 +28,22 @@ def get_snowflake_connection():
     )
 
 def insert_reading(cursor, reading):
-    # Note: our table currently has sensor_id, temperature_celsius,
-    # event_timestamp columns — we map container_id into sensor_id for now.
+    # Week 2 update: now also persisting origin and destination
+    # alongside humidity_percent/vibration_level.
     cursor.execute(
         f"""
-        INSERT INTO {SNOWFLAKE_TABLE} (sensor_id, temperature_celsius, event_timestamp)
-        VALUES (%s, %s, %s)
+        INSERT INTO {SNOWFLAKE_TABLE} (sensor_id, temperature_celsius, humidity_percent, vibration_level, origin, destination, event_timestamp)
+        VALUES (%s, %s, %s, %s, %s, %s, %s)
         """,
-        (reading["container_id"], reading["temperature_celsius"], reading["timestamp"])
+        (
+            reading["container_id"],
+            reading["temperature_celsius"],
+            reading["humidity_percent"],
+            reading["vibration_level"],
+            reading["origin"],
+            reading["destination"],
+            reading["timestamp"]
+        )
     )
 
 def main():
@@ -45,7 +53,7 @@ def main():
         value_deserializer=lambda v: json.loads(v.decode("utf-8")),
         auto_offset_reset="latest",
         enable_auto_commit=True,
-        group_id="snowflake-loader-v2"
+        group_id="snowflake-loader-v3"
     )
 
     conn = get_snowflake_connection()

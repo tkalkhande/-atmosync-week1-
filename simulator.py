@@ -18,12 +18,21 @@ TOPIC = "climate-sensor-data"
 # "AtmoSync" use case (e.g. Container A carrying avocados).
 CONTAINER_IDS = ["CONTAINER-A", "CONTAINER-B", "CONTAINER-C"]
 
+CONTAINER_ROUTES = {
+    "CONTAINER-A": {"origin": "Mumbai", "destination": "Rotterdam"},
+    "CONTAINER-B": {"origin": "Santos", "destination": "Hamburg"},
+    "CONTAINER-C": {"origin": "Ho Chi Minh City", "destination": "Los Angeles"},
+}
+
 def generate_reading(container_id):
+    route = CONTAINER_ROUTES[container_id]
     return {
         "container_id": container_id,
-        "temperature_celsius": round(random.uniform(2.0, 12.0), 2),   # cold-chain range
-        "humidity_percent": round(random.uniform(70.0, 95.0), 2),     # produce-relevant range
-        "vibration_level": round(random.uniform(0.0, 5.0), 2),        # arbitrary shock/vibration units
+        "origin": route["origin"],
+        "destination": route["destination"],
+        "temperature_celsius": round(random.uniform(2.0, 12.0), 2),
+        "humidity_percent": round(random.uniform(70.0, 95.0), 2),
+        "vibration_level": round(random.uniform(0.0, 5.0), 2),
         "timestamp": datetime.now(timezone.utc).isoformat()
     }
 
