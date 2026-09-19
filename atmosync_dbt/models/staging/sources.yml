@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: microclimate_db
+    schema: raw_data
+    tables:
+      - name: sensor_readings
+      - name: commodity_prices

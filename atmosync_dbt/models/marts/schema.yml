@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fct_sensor_commodity_arbitrage
+    columns:
+      - name: container_id
+        tests:
+          - not_null
+      - name: destination
+        tests:
+          - not_null

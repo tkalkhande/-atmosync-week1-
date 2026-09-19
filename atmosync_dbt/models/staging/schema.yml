@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_sensor_readings
+    columns:
+      - name: container_id
+        tests:
+          - not_null
+      - name: event_timestamp
+        tests:
+          - not_null
+      - name: temperature_celsius
+        tests:
+          - not_null
+
+  - name: stg_commodity_prices
+    columns:
+      - name: commodity
+        tests:
+          - not_null
+      - name: market
+        tests:
+          - not_null
+      - name: price_per_unit
+        tests:
+          - not_null
