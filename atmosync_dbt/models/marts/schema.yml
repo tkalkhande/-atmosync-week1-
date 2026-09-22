@@ -1,5 +1,26 @@
 version: 2
 
+seeds:
+  - name: commodity_spoilage_reference
+    columns:
+      - name: commodity
+        tests: [not_null, unique]
+      - name: ideal_temp_c
+        tests: [not_null]
+      - name: base_shelf_life_hours
+        tests: [not_null]
+      - name: q10_interval_c
+        tests: [not_null]
+
+  - name: market_locations
+    columns:
+      - name: market
+        tests: [not_null, unique]
+      - name: latitude
+        tests: [not_null]
+      - name: longitude
+        tests: [not_null]
+
 models:
   - name: fct_sensor_commodity_arbitrage
     columns:
@@ -9,3 +30,26 @@ models:
       - name: destination
         tests:
           - not_null
+
+  - name: int_spoilage_rate
+    columns:
+      - name: container_id
+        tests: [not_null]
+      - name: estimated_hours_to_spoilage
+        tests: [not_null]
+
+  - name: int_distance_to_market
+    columns:
+      - name: current_destination
+        tests: [not_null]
+      - name: distance_km
+        tests: [not_null]
+
+  - name: fct_spoilage_arbitrage
+    columns:
+      - name: container_id
+        tests: [not_null]
+      - name: is_at_risk
+        tests: [not_null]
+      - name: estimated_hours_to_spoilage
+        tests: [not_null]

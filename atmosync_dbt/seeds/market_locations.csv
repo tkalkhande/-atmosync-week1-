@@ -1,0 +1,7 @@
+market,latitude,longitude,is_primary_destination
+Rotterdam,51.9244,4.4777,true
+Hamburg,53.5511,9.9937,true
+Los Angeles,34.0522,-118.2437,true
+Antwerp,51.2194,4.4025,false
+Bremerhaven,53.5395,8.5809,false
+Oakland,37.8044,-122.2712,false

@@ -1,0 +1,4 @@
+commodity,ideal_temp_c,base_shelf_life_hours,q10_interval_c
+Avocado,5.0,336,8
+Banana,13.0,240,8
+Coffee,20.0,4320,12
