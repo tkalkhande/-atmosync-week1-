@@ -1,0 +1,136 @@
+dashboard_title: AtmoSync
+description: null
+css: null
+slug: null
+certified_by: null
+certification_details: null
+published: true
+uuid: 25f78238-1b2b-4dc5-8eab-e33da78cf15a
+metadata:
+  color_scheme_domain: []
+  shared_label_colors: []
+  map_label_colors:
+    CONTAINER-B: '#1FA8C9'
+    CONTAINER-C: '#454E7C'
+    CONTAINER-A: '#5AC189'
+  label_colors: {}
+  native_filter_configuration:
+  - id: NATIVE_FILTER-Q5iV0T2U72WL9QQOU-2Yi
+    type: NATIVE_FILTER
+    name: commodity
+    filterType: filter_select
+    description: ''
+    targets:
+    - column:
+        name: COMMODITY
+      datasetUuid: 434b9256-c653-4542-b6e6-a9552c7cf9a8
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded:
+      - 2
+      - 3
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      creatable: true
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    sortMetric: null
+position:
+  DASHBOARD_VERSION_KEY: v2
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  GRID_ID:
+    children:
+    - ROW-N-1A4X6YU4
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: AtmoSync
+    type: HEADER
+  ROW-N-1A4X6YU4:
+    children:
+    - CHART-WZV4HMIE
+    - CHART-OU7ZSBTH
+    - CHART-BH3UWD5C
+    - CHART-W84SRX29
+    id: ROW-N-1A4X6YU4
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    type: ROW
+    parents:
+    - ROOT_ID
+    - GRID_ID
+  CHART-WZV4HMIE:
+    children: []
+    id: CHART-WZV4HMIE
+    meta:
+      chartId: 4
+      height: 50
+      sliceName: At-Risk Containers
+      uuid: e2846d62-9498-4dc5-8624-4efd0097f836
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-1A4X6YU4
+  CHART-OU7ZSBTH:
+    children: []
+    id: CHART-OU7ZSBTH
+    meta:
+      chartId: 3
+      height: 50
+      sliceName: Temperature Fluctuation
+      uuid: 3e70c39c-ec28-46cc-9e10-e78280e26ad2
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-1A4X6YU4
+  CHART-BH3UWD5C:
+    children: []
+    id: CHART-BH3UWD5C
+    meta:
+      chartId: 2
+      height: 50
+      sliceName: Historical Container Routes
+      uuid: 53331803-2062-41ec-b532-6ca573704033
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-1A4X6YU4
+  CHART-W84SRX29:
+    children: []
+    id: CHART-W84SRX29
+    meta:
+      chartId: 5
+      height: 50
+      sliceName: Spoilage Risk by Container
+      uuid: 366f1a59-a9fa-4271-a37f-1799f26904c1
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-1A4X6YU4
+theme_uuid: null
+version: 1.0.0

@@ -1,3 +1,4 @@
+{{ config(materialized='table', cluster_by=['event_timestamp']) }}
 with source as (
     select * from {{ source('raw_data', 'sensor_readings') }}
 ),

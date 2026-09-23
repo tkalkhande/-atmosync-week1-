@@ -29,4 +29,4 @@ services:
       - kafka
 
 volumes:
-  kafka_dat
+  kafka_data:

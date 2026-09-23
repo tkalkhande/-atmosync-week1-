@@ -1,0 +1,15 @@
+database_name: AtmoSync Snowflake
+sqlalchemy_uri: snowflake://Tejasvi:XXXXXXXXXX@iuvcpsy-ni63727/microclimate_db/raw_data?warehouse=COMPUTE_WH
+cache_timeout: null
+expose_in_sqllab: true
+allow_run_async: false
+allow_ctas: false
+allow_cvas: false
+allow_dml: false
+allow_file_upload: false
+extra:
+  allows_virtual_table_explore: true
+impersonate_user: false
+configuration_method: sqlalchemy_form
+uuid: 9cc5ff6b-f565-487d-8c81-1671de1142ee
+version: 1.0.0
